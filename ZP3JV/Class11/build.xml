@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ukol4" default="all" basedir=".">
+    
+    <description>Knihovna SimpleGraphics</description>
+    
+    <property name="src.dir" location="src" />
+    <property name="build.dir" location="build" />
+    <property name="jar.dir" location="dist" />
+    <property name="jar.name" value="simple-graphics.jar"/>
+    <property name="doc.dir" location="doc" />
+    
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+    </target>
+    
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" />
+    </target>
+    
+    <!-- vytvor jar -->
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}" />
+        <jar jarfile="${jar.dir}/${jar.name}" basedir="${build.dir}">
+            <manifest>
+                <!-- main -->
+                <attribute name="Main-class" value="main.Program" />
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="doc" depends="compile">
+        <mkdir dir="${doc.dir}" />
+        <javadoc sourcepath="${src.dir}" destdir="${doc.dir}" />
+    </target>
+    <target name="javadoc" depends="doc">
+    </target>
+    
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <delete dir="${doc.dir}" />
+    </target>
+    
+    <target name="all" depends="jar, doc" />
+</project>
