@@ -14,7 +14,6 @@ int aritmeticky_prumer(int a, int b, int c) {
 	}
 }
 
-
 // 2.
 short aritmeticky_prumer2(short a, short b, short c) {
 	_asm{
@@ -115,8 +114,8 @@ konec:
 	}
 }
 
-int main() { 
-	
+
+int main() {
 	printf("prumer -10, -7 a 7: %d\n", aritmeticky_prumer(-10, -7, 7));
 	printf("prumer -10, -7 a 7: %d\n", aritmeticky_prumer2(-10, -7, 7));
 	printf("signum -10: %d\n", sgn(-10));
@@ -133,5 +132,6 @@ int main() {
 	printf("min3 1, 2, 3: %d\n", min3(1, 2, 3));
 	printf("min3 4, 2, 3: %d\n", min3(4, 2, 3));
 	printf("min3 42, 8, 2: %d\n", min3(42, 8, 2));
-
+    
+	return 0;
 }
