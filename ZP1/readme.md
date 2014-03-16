@@ -6,7 +6,7 @@
 * **Učebnice jazyka C** - Pavel Herout ([knihy.abz.cz](http://knihy.abz.cz/prodej/ucebnice-jazyka-c-6-vydani "http://knihy.abz.cz/prodej/ucebnice-jazyka-c-6-vydani"))
 
 ### Odkazy
-* [**devbook.cz** - Programování v jazyce C - Základy](http://http://www.devbook.cz/programovani-v-jazyce-c-zaklady "http://www.devbook.cz/programovani-v-jazyce-c-zaklady")
+* [**devbook.cz** - Programování v jazyce C - Základy](http://www.devbook.cz/programovani-v-jazyce-c-zaklady "http://www.devbook.cz/programovani-v-jazyce-c-zaklady")
 * [**programujte.com** - Seriál C](http://programujte.com/clanky/43-serial-c/ "http://programujte.com/clanky/43-serial-c/")
 
 ### IDE
