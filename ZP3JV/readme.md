@@ -7,7 +7,7 @@
 
 ### Odkazy
 * [**devbook.cz** - Java návody, příklady, zdrojáky, programy](http://www.devbook.cz/java-programy-zdrojaky-priklady-navody "http://www.devbook.cz/java-programy-zdrojaky-priklady-navody")
-* [**programujte.com** - Java tutoriál](http://www.devbook.cz/java-programy-zdrojaky-priklady-navody "http://www.devbook.cz/java-programy-zdrojaky-priklady-navody")
+* [**programujte.com** - Java tutoriál](http://programujte.com/clanky/15-java/ "http://programujte.com/clanky/15-java/")
 
 ### IDE
 * [**Eclipse**](https://www.eclipse.org "https://www.eclipse.org")
