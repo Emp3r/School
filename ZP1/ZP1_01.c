@@ -27,6 +27,6 @@ int main()
                                         // před názvem proměnné nikdy nesmí chybět znak &!
     printf("Číslo %i odpovída číslu %o v osmičkové soustavě a číslu %X v šestnáctkové soustavě.\n", zadane_cislo, zadane_cislo, zadane_cislo);
     
-
+    
     return 0;
 }
