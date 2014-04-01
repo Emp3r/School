@@ -1,12 +1,16 @@
 package Class04;
 
+import javax.swing.JFrame;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.*;
-
 
 public class DialogPerson extends JDialog {
 	
@@ -16,7 +20,6 @@ public class DialogPerson extends JDialog {
 	private JPanel inputPanel = new JPanel();
 	private JButton btnOk;
 	private JButton btnCancel;
-	
 	private JTextField txtFirst;
 	private JTextField txtSecond;
 	private JLabel lbFirst;
@@ -54,7 +57,7 @@ public class DialogPerson extends JDialog {
 									.addComponent(lbSecond))
 						.addGroup(layout.createParallelGroup()
 									.addComponent(txtFirst)
-									.addComponent(txtSecond, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, 200))); // nastavuje navic vlastnosti komponente 
+									.addComponent(txtSecond, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, 200)));
 		
 		layout.setVerticalGroup(
 				layout.createSequentialGroup()
@@ -68,19 +71,16 @@ public class DialogPerson extends JDialog {
 		inputPanel.add(lbFirst);
 		inputPanel.add(txtFirst);
 		
-		
 		GridLayout btnLayout = new GridLayout(1, 2);
 		
 		btnOk = new JButton("Ok");
-		btnOk.addActionListener(new ActionListener() {
-			
+		btnOk.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (result != null) {
 					result.setName(txtFirst.getText());
 					result.setOccupation(txtSecond.getText());
-				}
-				else {
+				} else {
 					if (!txtFirst.getText().equals(""))
 						result = new Person(txtFirst.getText(), txtSecond.getText());
 				}
@@ -90,7 +90,6 @@ public class DialogPerson extends JDialog {
 		
 		btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -103,7 +102,6 @@ public class DialogPerson extends JDialog {
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(inputPanel, BorderLayout.CENTER);
 		getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-	  
 		pack();
 	}
 

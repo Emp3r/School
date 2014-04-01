@@ -1,14 +1,29 @@
 package Class04;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTree;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.KeyStroke;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.tree.*;
-
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeSelectionModel;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,14 +45,15 @@ public class Form extends JFrame {
 	private String[] columnsA = new String[] { "Date", "Hours", "Text"};
 	private Object[][] valuesP = new Object[][] {};
 	private Object[][] valuesA = new Object[][] {};
-	private JPanel buttonPanel = new JPanel();
-	
+	private JPanel buttonPanel;
 	
 	//// >> FORM << ////
 	public Form() {
 		super();
 		this.setTitle("Company");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+		// System.setProperty("apple.laf.useScreenMenuBar", "true");
 		initializeMenu();
 		
 		tableModel = new MyTableModel(columnsP, valuesP);
@@ -81,6 +97,7 @@ public class Form extends JFrame {
 		initializeButtons();
 		
 		test();		
+		
 		this.setLayout(new BorderLayout());
 		this.setJMenuBar(mainMenu);
 		this.add(new JScrollPane(table), BorderLayout.CENTER);
@@ -89,7 +106,6 @@ public class Form extends JFrame {
 		this.setPreferredSize(new Dimension(666, 666));
 		this.pack();
 	}
-	
 	
 	//// MENU ////
 	private void initializeMenu() {
@@ -249,25 +265,28 @@ public class Form extends JFrame {
 		GridLayout btnLayout = new GridLayout(1, 5);
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(btnLayout);
-		JButton btnAdd = new JButton("Add person");
+		String start1 = "<html><center><font color=\"#002EB8\" size=\"5\"><b>";
+		String start2 = "<html><center><font color=\"#00994D\" size=\"5\"><b>";
+		String end = "</b></font></center></html>";
+		
+		JButton btnAdd = new JButton(start1 + "Add person" + end);
 		btnAdd.addActionListener(new AddPersonAction());
-		JButton btnEdit = new JButton("Edit person");
+		JButton btnEdit = new JButton(start1 + "Edit person" + end);
 		btnEdit.addActionListener(new EditPersonAction());
-		JButton btnDelete = new JButton("Delete person");
+		JButton btnDelete = new JButton(start1 + "Delete person" + end);
 		btnDelete.addActionListener(new DeletePersonAction());
-		JButton btnAddA = new JButton("Add activity");
+		JButton btnAddA = new JButton(start2 + "Add activity" + end);
 		btnAddA.addActionListener(new AddActivityAction());
-		JButton btnDelA = new JButton("Delete activity");
-		btnDelA.addActionListener(new DeleteActivityAction());		
+		JButton btnDelA = new JButton(start2 + "Delete activity" + end);
+		btnDelA.addActionListener(new DeleteActivityAction());	
+		
 		buttonPanel.add(btnAdd);
 		buttonPanel.add(btnEdit);
 		buttonPanel.add(btnDelete);
 		buttonPanel.add(btnAddA);
 		buttonPanel.add(btnDelA);
-		btnAdd.setPreferredSize(new Dimension(100, 70));
+		btnAdd.setPreferredSize(new Dimension(100, 60));
 	}
-	
-	
 	
 	//// TABLE ////
 	private void fillTablePersons(List<Person> listOfPersones) {

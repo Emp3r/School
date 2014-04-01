@@ -23,7 +23,7 @@ public class Form extends JFrame {
 	private DefaultListModel<Person> listModel;
 
 	
-	// FORM
+	//// >> FORM << ////
 	public Form() {
 		super();
 		this.setTitle("Zaměstnanci");
@@ -37,13 +37,14 @@ public class Form extends JFrame {
 		// File
 		menuFile = new JMenu("File");
 		menuFile.setMnemonic(KeyEvent.VK_F);
+			// open
 		JMenuItem menuItemOpen = new JMenuItem("Open");
 		menuItemOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
-		// open - load
+			// save
 		menuFile.add(menuItemOpen);
 		JMenuItem menuItemSave = new JMenuItem("Save");
 		menuItemSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
-		// save
+			// exit
 		menuFile.add(menuItemSave);
 		JMenuItem menuItemExit = new JMenuItem("Exit");
 		menuItemExit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
@@ -104,9 +105,7 @@ public class Form extends JFrame {
 				}
 			}
 		});
-		
 		mainMenu.add(menuActivity);
-		
 		
 		// LIST
 		listModel = new DefaultListModel<Person>();
@@ -137,7 +136,6 @@ public class Form extends JFrame {
 		p.addActivity(new Activity("8. 8. 2008", "1", "saving world"));
 		listModel.addElement(p);
 		p.addActivity(new Activity("5. 6. 2010", "2", "doing something"));
-		//
 
 		this.setJMenuBar(mainMenu);
 		this.setContentPane(mainPanel);
@@ -145,6 +143,7 @@ public class Form extends JFrame {
 		this.pack();
 	}
 	
+	// ACTIONS
 	private class AddPersonAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -156,7 +155,6 @@ public class Form extends JFrame {
 				listModel.addElement(dlg.getResult());
 		}
 	}
-	
 	private class EditPersonAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -169,7 +167,6 @@ public class Form extends JFrame {
 			}
 		}
 	}
-	
 	private class DeletePersonAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {

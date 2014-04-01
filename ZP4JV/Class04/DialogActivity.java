@@ -1,12 +1,16 @@
 package Class04;
 
+import javax.swing.JFrame;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.*;
-
 
 public class DialogActivity extends JDialog {
 	
@@ -16,7 +20,6 @@ public class DialogActivity extends JDialog {
 	private JPanel inputPanel = new JPanel();
 	private JButton btnOk;
 	private JButton btnCancel;
-	
 	private JTextField txtFirst;
 	private JTextField txtSecond;
 	private JTextField txtThird;
@@ -37,11 +40,8 @@ public class DialogActivity extends JDialog {
 		txtFirst.setColumns(20);
 		txtSecond = new JTextField();
 		txtSecond.setColumns(20);
-
 		txtThird = new JTextField();
 		txtThird.setColumns(20);
-		
-
 		
 		GroupLayout layout = new GroupLayout(inputPanel);
 		inputPanel.setLayout(layout);
@@ -58,7 +58,6 @@ public class DialogActivity extends JDialog {
 		sequentialGroup1.addGroup(parallelGroup2);
 		
 		layout.setHorizontalGroup(sequentialGroup1);
-		
 
 		GroupLayout.ParallelGroup parallelGroup3 = layout.createParallelGroup();
 		GroupLayout.ParallelGroup parallelGroup4 = layout.createParallelGroup();
@@ -67,7 +66,6 @@ public class DialogActivity extends JDialog {
 		parallelGroup4.addComponent(lbSecond).addComponent(txtSecond);
 		parallelGroup5.addComponent(lbThird).addComponent(txtThird);
 
-
 		GroupLayout.SequentialGroup sequentialGroup2 = layout.createSequentialGroup();
 		sequentialGroup2.addGroup(parallelGroup3);
 		sequentialGroup2.addGroup(parallelGroup4);
@@ -75,32 +73,26 @@ public class DialogActivity extends JDialog {
 		
 		layout.setVerticalGroup(sequentialGroup2);
 		
-		
 		inputPanel.add(txtFirst);
 		inputPanel.add(txtSecond);
 		inputPanel.add(txtThird);
-		
 		
 		GridLayout btnLayout = new GridLayout(1, 2);
 		
 		btnOk = new JButton("Ok");
 		btnOk.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (txtFirst.getText().equals("") && txtSecond.getText().equals("")) {
+				if (txtFirst.getText().equals("") && txtSecond.getText().equals(""))
 					result = null;
-				}
-				else {
+				else
 					result = new Activity(txtFirst.getText(), txtSecond.getText(), txtThird.getText());
-				}
 				setVisible(false);
 			}
 		});
 		
 		btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				result = null;
@@ -114,7 +106,6 @@ public class DialogActivity extends JDialog {
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(inputPanel, BorderLayout.CENTER);
 		getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-	  
 		pack();
 	}
 
