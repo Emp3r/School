@@ -1,0 +1,116 @@
+body {
+	background: #555;
+}
+#main-div {
+	background: #eee;
+	width: 824px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1px 10px;
+	border: 1px solid black;
+}
+#content {
+	padding: 30px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+#zadani {
+	padding-top: 0px;
+	padding-bottom: 8px;
+	margin-bottom: 0px;
+}
+#zadani ul {
+	list-style-type: square;
+	margin-top: 6px;
+	margin-bottom: 0px;
+}
+
+a, a:link, a:visited {
+	cursor: pointer;
+	color: #d00;
+	text-decoration: none;
+}
+
+table { 
+	background: #eee;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black; 
+}
+table th {
+	background: #ddd;
+	padding: 3px 8px;
+}
+table td {
+	background: #fff;
+	padding: 0px 8px;
+}
+
+input[type=submit] {
+    width: 6em;
+    font-size: 2em;
+}
+
+h3 {
+	color: #d00;
+	margin: 0px;
+	margin-left: 4px;
+}
+
+
+
+
+
+#menu {
+	height: 60px;
+	text-align: center;
+}
+/* Simnple dropdown navigation menu */
+#simple-dropdown-nav {
+    list-style: none;
+    font-weight: bold;
+	text-align: center;
+}
+#simple-dropdown-nav li {
+    float: left;
+    position: relative;
+    margin-right: 1px;
+    min-width: 105px;
+}
+#simple-dropdown-nav a {
+    display: block;
+    color: #fff;
+    background: #444;
+    padding: 5px;
+    text-decoration: none;
+}
+#simple-dropdown-nav a:hover, 
+#simple-dropdown-nav a.selected-tab {
+    background: #d00;
+}
+/* Dropdown */
+#simple-dropdown-nav ul {
+    list-style: none;
+    background: rgba(0,0,0,0);
+    position: absolute;
+    left: -9999px;
+}
+#simple-dropdown-nav ul li {
+    padding-top: 1px;
+}
+#simple-dropdown-nav li:hover ul {
+    left: -40px;
+}
+#simple-dropdown-nav li:hover ul li {
+    min-width: 280px;
+	text-align: left;
+}
+#simple-dropdown-nav li:hover a { 
+    background: #d00;
+}
+#simple-dropdown-nav li:hover ul li a:hover,
+#simple-dropdown-nav li:hover ul li a.selected-tab {
+    background: #ccc;
+    color: #111;
+}
